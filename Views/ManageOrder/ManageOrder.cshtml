@@ -1,0 +1,53 @@
+﻿@model List<CoffeeShop.Models.OrderConfirmationVM>
+@using CoffeeShop.Utility
+@{
+    ViewData["Title"] = "ManageOrder";
+}
+
+<h2>Manage Order</h2>
+<form method="post">
+    <br />
+    @if(Model.Count > 0)
+    {
+        @foreach (var item in Model)
+        {
+
+    <div class="thumbnail row">
+        @Html.Partial("~/Views/ShoppingCart/_IndividualOrderDetail.cshtml", item)
+        <div class="col-sm-2">
+            @if (item.OrderHeader.Status.Equals(SD.StatusSubmitted))
+        {
+            <button type="submit" asp-action="OrderPrepare" asp-route-orderId="@item.OrderHeader.OrderHeaderId" class="btn btn-primary form-control">
+                <span class="glyphicon glyphicon-ok"></span>Start Preparing
+            </button>
+            <button type="submit" asp-action="OrderCancel" asp-route-orderId="@item.OrderHeader.OrderHeaderId" class="btn btn-danger form-control">
+                <span class="glyphicon glyphicon-remove"></span>Cancel Order
+            </button>
+
+    }
+    else
+    {
+        @if (item.OrderHeader.Status.Equals(SD.StatusInProcess))
+    {
+        <button type="submit" asp-action="OrderReady" asp-route-orderId="@item.OrderHeader.OrderHeaderId" class="btn btn-success form-control">
+            <span class="glyphicon glyphicon-cutlery"></span>Order Prepared
+        </button>
+        <button type="submit" asp-action="OrderCancel" asp-route-orderId="@item.OrderHeader.OrderHeaderId" class="btn btn-danger form-control">
+            <span class="glyphicon glyphicon-remove"></span>Cancel Order
+        </button>
+
+}
+
+}
+        </div>
+    </div>
+
+        }
+
+    }
+    else
+    {
+        <p>No orders available...</p>
+
+    }
+</form>

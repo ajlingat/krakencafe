@@ -1,0 +1,12 @@
+C:\Users\ajlingat\source\repos\CoffeeShop\bin\Release\netcoreapp2.0\CoffeeShop.deps.json
+C:\Users\ajlingat\source\repos\CoffeeShop\bin\Release\netcoreapp2.0\CoffeeShop.runtimeconfig.json
+C:\Users\ajlingat\source\repos\CoffeeShop\bin\Release\netcoreapp2.0\CoffeeShop.runtimeconfig.dev.json
+C:\Users\ajlingat\source\repos\CoffeeShop\bin\Release\netcoreapp2.0\CoffeeShop.dll
+C:\Users\ajlingat\source\repos\CoffeeShop\bin\Release\netcoreapp2.0\CoffeeShop.pdb
+C:\Users\ajlingat\source\repos\CoffeeShop\obj\Release\netcoreapp2.0\CoffeeShop.csprojResolveAssemblyReference.cache
+C:\Users\ajlingat\source\repos\CoffeeShop\obj\Release\netcoreapp2.0\CoffeeShop.csproj.CoreCompileInputs.cache
+C:\Users\ajlingat\source\repos\CoffeeShop\obj\Release\netcoreapp2.0\UserSecretsAssemblyInfo.cs
+C:\Users\ajlingat\source\repos\CoffeeShop\obj\Release\netcoreapp2.0\CoffeeShop.AssemblyInfoInputs.cache
+C:\Users\ajlingat\source\repos\CoffeeShop\obj\Release\netcoreapp2.0\CoffeeShop.AssemblyInfo.cs
+C:\Users\ajlingat\source\repos\CoffeeShop\obj\Release\netcoreapp2.0\CoffeeShop.dll
+C:\Users\ajlingat\source\repos\CoffeeShop\obj\Release\netcoreapp2.0\CoffeeShop.pdb

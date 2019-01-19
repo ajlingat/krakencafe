@@ -1,0 +1,80 @@
+﻿@model CoffeeShop.Models.OrderConfirmationVM
+@using CoffeeShop.Utility
+
+@{
+    ViewData["Title"] = "OrderPickupDetails";
+}
+
+<h2>Order Pickup Details</h2>
+<br />
+
+<form method="post">
+    <div class="row thumbnail">
+        <div class="col-sm-8" style="border-right:1px solid #bbb9b9">
+            <br />
+            <div class="form-group row">
+                <div class="col-sm-3">
+                    Email:
+                </div>
+                <div class="col-sm-9">
+                    @Model.OrderHeader.ApplicationUser.Email
+                </div>
+            </div>
+            <div class="form-group row">
+                <div class="col-sm-3">
+                    Order Date:
+                </div>
+                <div class="col-sm-9">
+                    @Model.OrderHeader.OrderDate
+                </div>
+            </div>
+            <div class="form-group row">
+                <div class="col-sm-3">
+                    Comments: 
+                </div>
+                <div class="col-sm-9">
+                    @Model.OrderHeader.Comments
+                </div>
+            </div>
+            <div class="form-group row">
+                <div class="col-sm-3">
+                    Order Total: 
+                </div>
+                <div class="col-sm-9">
+                    <strong>$@Model.OrderHeader.OrderTotal</strong>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-sm-4">
+            <br />
+            <div class="col-sm-12">
+                <h4>Order Number: @Model.OrderHeader.OrderHeaderId</h4>
+            </div>
+            <div class="col-sm-12">
+                <ul class="list-group">
+                    @foreach(var details in Model.OrderDetailList)
+                    {
+                        <li class="list-group-item">
+                            <span class="badge">@details.Count</span>
+                            @details.Name
+                        </li>
+                    }
+                </ul>
+            </div>
+            <div class="col-sm-12">
+                @if (Model.OrderHeader.Status.Equals(SD.StatusReady))
+                {
+                    <button type="submit" asp-route-orderId="@Model.OrderHeader.OrderHeaderId" class="btn btn-success">
+                        <span class="glyphicon glyphicon-check"></span> Confirm Pickup
+                    </button>
+                }
+                else
+                {
+                    <button type="submit" disabled class="btn btn-primary">@Model.OrderHeader.Status</button>
+                }
+            </div>
+        </div>
+    </div>
+</form>
+

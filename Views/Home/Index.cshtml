@@ -1,0 +1,43 @@
+﻿@model IEnumerable<CoffeeShop.Data.MenuItem>;
+@using CoffeeShop.Data;
+
+@{
+    ViewData["Title"] = "Kraken";
+}
+<h2>Kraken Cafe <span class="glyphicon glyphicon-leaf"></span></h2>
+
+@if (Model != null)
+{
+    @foreach (var category in ViewBag.Category)
+    {
+        <h3 style="padding-left:50px;" class="text-success">@category.Name</h3>
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="thumbnail col-sm-10 col-sm-offset-1">
+                    <div class="row">
+                        @foreach (var item in Model.Where(c => c.CategoryType.Name == category.Name))
+                        {
+                        <div class="col-sm-10">
+                            <label class="text-primary" style="font-size:17px;">@item.Name</label>
+                        </div>
+
+                        <div class="col-sm-2 text-right">
+                            <h4>$@item.Price</h4>
+                        </div>
+
+                        <div class="col-sm-10">
+                            <p>@item.Description</p>
+                        </div>
+
+                        <div class="col-sm-2 text-right">
+                            <a asp-action="Details" asp-route-id="@item.Id" class="btn btn-sm btn-primary">Details</a>
+                        </div>
+                        
+                        }
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    }
+}

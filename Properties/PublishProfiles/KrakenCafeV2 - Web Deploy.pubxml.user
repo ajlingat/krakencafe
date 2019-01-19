@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+This file is used by the publish/package process of your Web project. You can customize the behavior of this process
+by editing this MSBuild file. In order to learn more about this please visit https://go.microsoft.com/fwlink/?LinkID=208121. 
+-->
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <TimeStampOfAssociatedLegacyPublishXmlFile />
+    <EncryptedPassword>AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAvK8kfc/s70yws82Uq3Q8NAAAAAACAAAAAAAQZgAAAAEAACAAAABmT3RlEQvwZBz++OnYiJpGI32pLdKRaA1ciE67HabCMgAAAAAOgAAAAAIAACAAAAC8d/z9pi2RO2OoE6rVmePY9yqJGPmSPGTnw509kZCCw4AAAABTGQEh40mn0bZcDppdL1YPv9WJxh08tH1uYyQgcwQUFIzHCfvGjTW1RbafqyMfwHE0OojdOxCycP0OZsbCNitYYpYUnwbw/GMfrqsKye7yV7sZCH49p8avtGltrKLceu4NEXgilv9pbfEGtv8VOngrGp2gAIbfITXd+2WgYb3E+EAAAAC0C1MH1L+ETQnR8qbq6BADetgY0UXynEMt9QScp2+2j2lvdTWRmwgpTZItLj0a2ZOJ/m+y3pDeeqIANYkEs2Vu</EncryptedPassword>
+  </PropertyGroup>
+  <ItemGroup>
+    <DestinationConnectionStrings Include="DefaultConnection">
+      <Value>DataSource=app.db</Value>
+    </DestinationConnectionStrings>
+  </ItemGroup>
+</Project>

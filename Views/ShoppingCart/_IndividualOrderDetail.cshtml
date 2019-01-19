@@ -1,0 +1,15 @@
+﻿@model CoffeeShop.Models.OrderConfirmationVM
+
+<div>
+    <p>Date Ordered: @Model.OrderHeader.OrderDate</p>
+    Order Number: <strong>@Model.OrderHeader.OrderHeaderId</strong>
+    <ul>
+        @foreach (var details in Model.OrderDetailList)
+        {
+            <li>@details.Name x @details.Count</li>
+        }
+    </ul>
+    <p>Order Status: @Model.OrderHeader.Status</p>
+    <p>Comments: @Model.OrderHeader.Comments</p>
+    <p>Order Total: <strong>$@Model.OrderHeader.OrderTotal</strong></p>
+</div>

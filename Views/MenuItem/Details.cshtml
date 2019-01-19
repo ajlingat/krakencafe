@@ -1,0 +1,42 @@
+﻿@model CoffeeShop.Data.MenuItem
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>MenuItem</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            Name:
+        </dt>
+        <dd>
+            @Model.Name
+        </dd>
+        <dt>
+            Description
+        </dt>
+        <dd>
+            @Model.Description
+        </dd>
+        <dt>
+            Price:
+        </dt>
+        <dd>
+            @Model.Price
+        </dd>
+        <dt>
+            Category Type:
+        </dt>
+        <dd>
+            @Model.CategoryType.Name
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.Id" class="btn btn-sm btn-primary">Edit</a>
+    <a asp-action="Index" class="btn btn-sm btn-success">Back to List</a>
+</div>

@@ -1,0 +1,23 @@
+﻿@model CoffeeShop.Models.OrderConfirmationVM
+@{
+    ViewData["Title"] = "Order Confirmation";
+}
+
+<h2>OrderConfirmation</h2>
+<br />
+
+@if (Model != null)
+{
+<div class="thumbnail row">
+    @Html.Partial("_IndividualOrderDetail", Model)
+    <div>
+        <strong>***You will need your order number when picking up your order.***</strong>
+    </div>
+</div>
+    <a asp-controller="Home" asp-action="Index" class="btn btn-success">Place another order</a>
+}
+else
+{
+    <div class="text-danger">Error... Please try again</div>
+}
+

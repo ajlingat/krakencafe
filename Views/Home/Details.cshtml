@@ -1,0 +1,60 @@
+﻿@model CoffeeShop.Data.ShoppingCart
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h2>Details</h2>
+
+<h4>MenuItem</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Details">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input asp-for="ShoppingCartId" class="form-control" type="hidden"/>
+            <div class="form-group">
+
+                <input type="hidden" asp-for="menuItem.Name" class="form-control" />
+                <input type="hidden" asp-for="menuItem.Id" class="form-control" />
+                <input type="hidden" asp-for="menuItem.Description" class="form-control" />
+                <input type="hidden" asp-for="menuItem.Price" class="form-control" />
+                <input type="hidden" asp-for="menuItem.CategoryType.Name" class="form-control" />
+
+                <label asp-for="menuItem.Name" class="control-label"></label>
+                <input disabled asp-for="menuItem.Name" class="form-control" />
+                <span asp-validation-for="menuItem.Name" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="menuItem.Description" class="control-label"></label>
+                <textarea style="height:150px;" disabled asp-for="menuItem.Description" class="form-control"></textarea>
+                <span asp-validation-for="menuItem.Description" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="menuItem.Price" class="control-label"></label>
+                <input type="hidden" asp-for="MenuItemId" class="form-control" />
+              
+                <input disabled asp-for="menuItem.Price" class="form-control" />
+                <span asp-validation-for="menuItem.Price" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="menuItem.CategoryType.Name" class="control-label">Category</label>
+                <input disabled asp-for="menuItem.CategoryType.Name" class="form-control" />
+                <span asp-validation-for="menuItem.CategoryType.Name" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Count" class="control-label"></label>
+                <input asp-for="Count" class="form-control" />
+                <span asp-validation-for="Count" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Add To Cart" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index" class="btn btn-sm btn-success">Back to List</a>
+</div>
+

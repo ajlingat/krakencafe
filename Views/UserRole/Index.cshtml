@@ -1,0 +1,30 @@
+﻿@model IEnumerable<CoffeeShop.Models.AccountViewModels.UserVM>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h4>Users</h4>
+
+<table class="table">
+    <thead>
+        <tr>
+                <th>
+                    Email
+                </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model) {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Email)
+                    </td>
+                    <td>
+                        @Html.ActionLink("View Roles", "Detail", new { userName = item.Email })
+                    </td>
+                </tr>
+        }
+    </tbody>
+</table>
